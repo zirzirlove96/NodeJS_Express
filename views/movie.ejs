@@ -9,25 +9,14 @@
     <meta name="generator" content="Hugo 0.79.0">
     <title>Node.JS Home Page</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
-
-
-
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#7952b3">
 
-    <!--<link rel="stylesheet" href="/css/ui.css">-->
-
+    <!-- Custom styles for this template -->
+    <link href="/css/signin.css" rel="stylesheet">
+    <link rel="stylesheet" href="/cover.css">
 
     <style>
         .bd-placeholder-img {
@@ -44,86 +33,23 @@
             }
         }
 
-        ul,
-        li,
-        section,
-        div {
-            padding: 0;
-            margin: 0
+        .button {
+            color: #333;
+            background-color: #fff !important;
+            border-color: #6c757d;
+            font-weight: 700 !important;
         }
-
-        li {
-            list-style: none;
-        }
-
-
-        .showWrap {
-            width: 1000px;
-            margin: 30px auto;
-            overflow-y: auto;
-        }
-
-
-        .formWrap {
-            width: 600px;
-            /* overflow-y: auto;*/
-            margin: 30px auto;
-        }
-
-
-        form span {
-            display: inline-block;
-            width: 80px;
-        }
-
-        .showWrap>ul {
-            overflow: auto;
-            width: 1500px;
-            margin: 0px auto;
-            background-color: #f3f2f2;
-        }
-
-        .showWrap>ul>li {
-            padding: 60px;
-            width: 200px;
-            float: left;
-            border-right: 1px solid #e6dada;
-            height: 500px;
-        }
-
-        .showWrap form>div {
-            margin-bottom: 12px;
-        }
-
-        .showWrap button {
-            width: 120px;
-            height: 30px;
-            margin-top: 20px;
-        }
-
-        .showResult {
-            margin-top: 30px;
-        }
-
-        .showResult li {
-            margin-bottom: 16px;
-        }
-
-
     </style>
-
-    <link href="/css/signin.css" rel="stylesheet">
-    <link rel="stylesheet" href="/cover.css">
-
 
 </head>
 
-<body class="d-flex text-center text-white bg-dark">
+<body class="d-flex h-100 text-center text-white bg-dark">
 
-    <div class="cover-container p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div>
-                <nav class="nav nav-masthead justify-content-center float-md-end">
+                <h3 class="float-md mb-50">Movie</h3>
+                <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link active" aria-current="page" href="/main">Home</a>
                     <a class="nav-link" href="/logout">Logout</a>
                 </nav>
@@ -131,64 +57,97 @@
         </header>
 
 
-        <h1>Movie list API Test</h1>
-
-        <section class="showWrap">
-            <ul>
+        <main class="form-signin" id="showWrap" style="overflow:auto">
+            <!--<ul>
                 <li class="get_all">
                     <button>모든영화보기</button>
                     <section class="showResult"></section>
-                </li>
+                </li>-->
+            <div class="get_all" style="position: relative; left:0">
+                <button class="btn btn-lg btn-primary" style="color: #333; 
+               background-color: #fff!important; 
+               border-color: #6c757d;
+               font-weight: 700!important;">모든영화보기</button>
+                <section class="showResult"></section>
+            </div>
 
-                <li class="post">
-                    <form action="/" method="post">
-                        <div> 제목 : <input type="text" name="title" placeholder="Terminator"> </div>
-                        <div> 장르 : <input type="text" name="type" placeholder="drama"> </div>
-                        <div> 평점 : <input type="text" name="grade" placeholder="8.43"> </div>
-                        <div> 주연 : <input type="text" name="actor" placeholder="Tom cruise"> </div>
-                    </form>
-                    <button>영화추가</button>
-                    <section class="showResult"></section>
-                </li>
+            <p></p>
+            <div class="post">
+                <form action="/" method="post">
+                    <div> 제목 : <input type="text" class="form-control" name="title" placeholder="Terminator"> </div>
+                    <div> 장르 : <input type="text" class="form-control" name="type" placeholder="drama"> </div>
+                    <div> 평점 : <input type="text" class="form-control" name="grade" placeholder="8.43"> </div>
+                    <div> 주연 : <input type="text" class="form-control" name="actor" placeholder="Tom cruise"> </div>
+                </form>
+                <p></p>
+                <button class="btn btn-lg btn-primary" style="color: #333; 
+                background-color: #fff!important; 
+                border-color: #6c757d;
+                font-weight: 700!important;">영화추가</button>
+                <section class="showResult"></section>
+            </div>
 
-                <li class="get_id">
-                    <input type="text" name="title">
-                    <button>영화상세정보</button>
-                    <section class="showResult"></section>
-                </li>
+        <p></p>
+            <div class="get_id">
+                <input type="text" name="title" class="form-control">
+                <p></p>
+                <button class="btn btn-lg btn-primary" style="color: #333; 
+                background-color: #fff!important; 
+                border-color: #6c757d;
+                font-weight: 700!important;">영화상세정보</button>
+                <p></p>
+                <section class="showResult"></section>
+            </div>
 
-                <li class="delete_id">
-                    <input type="text" name="title">
-                    <button>영화삭제</button>
-                    <section class="showResult"></section>
+            <p></p>
+            <div class="delete_id">
+                <input type="text" name="title" class="form-control">
+                <p></p>
+                <button class="btn btn-lg btn-primary" style="color: #333; 
+                background-color: #fff!important; 
+                border-color: #6c757d;
+                font-weight: 700!important;">영화삭제</button>
+                <section class="showResult"></section>
 
-                </li>
+            </div>
 
-                <li class="update_id">
-                    <form action="" method="post">
-                        <div> 제목 : <input type="text" name="title" placeholder="Terminator"> </div>
-                        <div> 장르 : <input type="text" name="type" placeholder="drama"> </div>
-                        <div> 평점 : <input type="text" name="grade" placeholder="8.43"> </div>
-                        <div> 주연 : <input type="text" name="actor" placeholder="Tom cruise"> </div>
-                    </form>
-                    <button>영화정보갱신</button>
-                    <!--<section class="showResult">ㅁㅁ</section>-->
-                </li>
-
-                <li class="get_min">
-                    <button>현재 상영중인영화</button>
-                    <!--<section class="showResult">aaa</section>-->
-                </li>
-            </ul>
-        </section>
+            <!--
+            <p></p>
+            <div class="update_id">
+                <form action="/" method="post">
+                    <div> 제목 : <input type="text" class="form-control" name="title" placeholder="Terminator"> </div>
+                    <div> 장르 : <input type="text" class="form-control" name="type" placeholder="drama"> </div>
+                    <div> 평점 : <input type="text" class="form-control" name="grade" placeholder="8.43"> </div>
+                    <div> 주연 : <input type="text" class="form-control" name="actor" placeholder="Tom cruise"> </div>
+                </form>
+                <p></p>
+                <button class="btn btn-lg btn-primary" style="color: #333; 
+                background-color: #fff!important; 
+                border-color: #6c757d;
+                font-weight: 700!important;">영화정보갱신</button>
+                <section class="showResult"></section>
+            </div>
+            -->
+            
+            <!--
+            <p></p>
+            <div class="get_min">
+                <button class="btn btn-lg btn-primary" style="color: #333; 
+                background-color: #fff!important; 
+                border-color: #6c757d;
+                font-weight: 700!important;">현재 상영중인영화</button>
+                <section class="showResult"></section>
+            </div>
+            -->
+        </main>
     </div>
 
 
     <script>
-        document.querySelector('.showWrap').addEventListener('click', function (e) {
+        document.querySelector('#showWrap').addEventListener('click', function (e) {
             let url, method, data, fn;
             const target = e.target;
-            const li = target.closest('LI');
+            const li = target.closest('DIV');
             const showResult = li.querySelector(".showResult");
             const type = li.className;
             if (target.tagName !== "BUTTON") return;
@@ -199,10 +158,10 @@
                     fn = function (result) {
                         if (result.result === 1) {
                             let titles = result.data.reduce(function (pre, next) {
-                                pre += "<li>" + next.title + "</li>"
+                                pre += "<h4>" + next.title + "</h4>"
                                 return pre;
                             }, "");
-                            showResult.innerHTML = "<ul>" + titles + "</ul>";
+                            showResult.innerHTML = "<p>" + titles + "</p>";
                         } else {
                             showResult.innerHTML = "list not found";
                         }
